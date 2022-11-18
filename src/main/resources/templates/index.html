@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh" xml:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>「沃玛频道」小测试</title>
+    <link href="/css/zui.min.css" rel="stylesheet">
+    <script src="/js/jquery-1.12.4.min.js"></script>
+    <script src="/js/zui.min.js"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+</head>
+<body>
+<input type="hidden" id="userId" name="userId" th:value="${userId}">
+<div class="container">
+    <div class="survey-container">
+        <div class="content">
+            <p style="text-align: center;font-size: 22px;font-weight: 500;color: #333;">「沃玛频道」小测试</p>
+            <p style="text-align: left;font-size: 14px;color: #666;">
+                ※为了营造良好的聊天环境，您需要完成这个小测试才能在频道发言。</p>
+            <p style="text-align: left;font-size: 14px;color: #666;">「频道链接」https://channel.warma.com.cn</p>
+        </div>
+
+        <div class="content question" id="Q1">
+            <p style="text-align: left;font-size: 16px;font-weight: 500;color: #333;">
+                1. 您是否对沃玛有一定的了解？
+                <span style="color: red;">*</span>
+            </p>
+            <div class="answer">
+                <div class="radio-primary">
+                    <input id="A1-1" name="Q1" type="radio" value="是的，我看过她的视频并且了解她">
+                    <label for="A1-1">是的，我看过她的视频并且了解她</label>
+                </div>
+                <div class="radio-primary">
+                    <input id="A1-2" name="Q1" type="radio" value="没有，我还没看过沃玛的视频，但是我想了解她">
+                    <label for="A1-2">没有，我还没看过沃玛的视频，但是我想了解她</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="content question" hidden id="Q2">
+            <p style="text-align: left;font-size: 16px;font-weight: 500;color: #333;">
+                2. 如果您对沃玛没有一定的了解，我们建议您先去b站看看她的视频，了解后再来尝试填写问卷，谢谢您的理解与配合！
+                <span style="color: red;">*</span>
+            </p>
+            <p><span style="font-size: 12px; color: rgb(157, 157, 157);">https://space.bilibili.com/53456</span></p>
+            <p><span style="font-size: 12px; color: rgb(157, 157, 157);">沃玛的B站：@Warma</span></p>
+            <p><span style="font-size: 12px; color: rgb(157, 157, 157);">沃玛的微博：@_warma_</span></p>
+            <p><span style="font-size: 12px; color: rgb(157, 157, 157);">https://weibo.com/n/_warma_</span></p>
+            <div class="answer">
+                <div class="radio-primary">
+                    <input checked="checked" id="A2-1" name="Q2" type="radio" value="好的，我明白了">
+                    <label for="A2-1">好的，我明白了</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="content question" hidden id="Q3">
+            <p style="text-align: left;font-size: 16px;font-weight: 500;color: #333;">
+                3. 您是在哪里发现「沃玛频道」的？
+                <span style="color: red;">*</span>
+            </p>
+            <div class="answer">
+                <div class="radio-primary">
+                    <input id="A3-1" name="Q3" type="radio" value="沃玛相关的QQ群">
+                    <label for="A3-1">沃玛相关的QQ群</label>
+                </div>
+                <div class="radio-primary">
+                    <input id="A3-2" name="Q3" type="radio" value="其他频道的合作宣传">
+                    <label for="A3-2">其他频道的合作宣传</label>
+                </div>
+                <div class="radio-primary">
+                    <input id="A3-3" name="Q3" type="radio" value="频道搜索页推荐">
+                    <label for="A3-3">频道搜索页推荐</label>
+                </div>
+                <div class="radio-primary">
+                    <input id="A3-4" name="Q3" type="radio" value="自行搜索">
+                    <label for="A3-4">自行搜索</label>
+                </div>
+                <div class="radio-primary">
+                    <input id="A3-5" name="Q3" type="radio" value="朋友邀请">
+                    <label for="A3-5">朋友邀请</label>
+                </div>
+                <div class="radio-primary">
+                    <input id="A3-6" name="Q3" type="radio" value="微博超话">
+                    <label for="A3-6">微博超话</label>
+                </div>
+                <div class="radio-primary">
+                    <input id="A3-7" name="Q3" type="radio" value="B站">
+                    <label for="A3-7">B站</label>
+                </div>
+                <div class="radio-primary">
+                    <input id="A3-8" name="Q3" type="radio" value="其他">
+                    <label for="A3-8">其他</label>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="content question" hidden id="Q4">
+            <p style="text-align: left;font-size: 16px;font-weight: 500;color: #333;">
+                4. 请写出与沃玛有关的<span style="color: red;">三个词</span>
+                <span style="color: red;">*</span>
+            </p>
+            <p><span
+                    style="font-size: 12px; color: rgb(157, 157, 157);">可以是沃玛相关的梗，也可以是沃玛视频中出现过的要素等。</span>
+            </p>
+            <p><font color="#9d9d9d"><span style="font-size: 12px;">请勿直接输入“Warma”、“沃玛”等。</span></font></p>
+            <p><span
+                    style="font-size: 12px; color: rgb(157, 157, 157);">请勿输入含义广泛的形容词，如：“可爱”、“温柔”等。</span>
+            </p>
+            <p><span
+                    style="font-size: 12px; color: rgb(157, 157, 157);">如果有以上情况管理可能会【不给予】通过审核。</span>
+            </p>
+            <div class="answer">
+                <div class="input-control">
+                    <input class="form-control" id="A4-1" placeholder="请输入" type="text">
+                    <label class="input-control" for="A4-1"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="content question" hidden id="Q5">
+            <p style="text-align: left;font-size: 16px;font-weight: 500;color: #333;">
+                5. 您对沃玛的看法/您关注她的原因（请认真回答，至少说出<span style="color: red;">两点</span>）
+                <span style="color: red;">*</span>
+            </p>
+            <p><span style="color: rgb(157, 157, 157); font-size: 12px;">可以是您喜欢看沃玛视频的原因，亦或是您欣赏沃玛的地方。(请您认真地写出您最真实的想法，这将会成为管理员审核的重要依据。)</span>
+            </p>
+            <div class="answer">
+                <div class="input-control">
+                    <input class="form-control" id="A5-1" placeholder="请输入" type="text">
+                    <label class="input-control" for="A5-1"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="content question" hidden id="Q6">
+            <p style="text-align: left;font-size: 16px;font-weight: 500;color: #333;">
+                6. 沃玛最让您印象深刻的作品是？
+                <span style="color: red;">*</span>
+            </p>
+            <p><span style="font-size: 12px; color: rgb(157, 157, 157);">可以是视频作品、音乐作品、游戏作品等</span></p>
+            <p><span style="font-size: 12px; color: rgb(157, 157, 157);">*请勿输入AV号/BV号，请用文字描述作品</span></p>
+            <p><span
+                    style="font-size: 12px; color: rgb(157, 157, 157);">*请勿输入“所有的”、“全部”等，即便您真的喜欢所有的作品，也请例举一个确定的作品</span>
+            </p>
+            <p><span style="font-size: 12px; color: rgb(157, 157, 157);">如果有以上情况管理可能会【不给予】通过审核</span>
+            </p>
+            <div class="answer">
+                <div class="input-control">
+                    <input class="form-control" id="A6-1" placeholder="请输入" type="text">
+                    <label class="input-control" for="A6-1"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="content question" hidden id="Q7">
+
+            <hr>
+            <div class="" data-v-0f764e56="" data-v-dd4e9cac="">
+                <p><span style="font-size: 16px;">请阅读「频道守则」</span></p>
+                <span></span><span></span>
+                <p>﻿</p><span></span><span></span>
+                <p><span style="font-size: 14px; color: rgb(95, 95, 95);">【沃玛频道简介】</span></p>
+                <span></span><span></span>
+                <p><span style="font-size: 14px; color: rgb(95, 95, 95);">欢迎来到沃玛「Warma」频道，这里是由沃玛的粉丝们共同建设和运营的「QQ频道」，你可以在这里及时收到沃玛更新推送，分享日常生活，相互学习与交流，一起讨论兴趣爱好等等。</span>
+                </p><span></span><span></span>
+                <p><span style="font-size: 14px; color: rgb(95, 95, 95);">﻿</span></p><span></span><span></span>
+                <p><span style="font-size: 14px; color: rgb(95, 95, 95);">【简要频道规则】</span></p>
+                <span></span><span></span>
+                <p><span
+                        style="font-size: 14px; color: rgb(95, 95, 95);">[遵守国家法律，请勿发布任何违反国家法律的内容！]</span>
+                </p><span></span><span></span>
+                <p><span
+                        style="font-size: 14px; color: rgb(95, 95, 95);">1、严禁发布任何沃玛本人已删除或者沃玛本人不愿意透露的内容！</span>
+                </p><span></span><span></span>
+                <p><span
+                        style="font-size: 14px; color: rgb(95, 95, 95);">2、禁止刷屏，发布广告、色情、暴力等会引起他人不适的不良内容！</span>
+                </p><span></span><span></span>
+                <p><span style="font-size: 14px; color: rgb(95, 95, 95);">3、禁止讨论政治敏感话题！</span></p>
+                <span></span><span></span>
+                <p><span
+                        style="font-size: 14px; color: rgb(95, 95, 95);">4、请尊重他人，友善交流，禁止吵架、侮辱、骚扰他人！</span>
+                </p><span></span><span></span>
+                <p><span style="font-size: 14px; color: rgb(95, 95, 95);">5、不要取带有误解性质的个人昵称。</span></p>
+                <span></span><span></span>
+                <p><span style="font-size: 14px; color: rgb(95, 95, 95);">6、请各位尽量到对应的子频道聊天。</span></p>
+                <span></span><span></span>
+                <p><span style="font-size: 14px; color: rgb(95, 95, 95);">﻿</span></p><span></span><span></span>
+                <p><span
+                        style="font-size: 14px; color: rgb(95, 95, 95);">‼️若您不遵守以上规定，管理员有权对您使用“撤回”“禁言”“移出频道”等职能</span>
+                </p><span></span><span></span>
+                <p><span
+                        style="font-size: 14px; color: rgb(95, 95, 95);">‼️如果您在频道内多次或严重违规，您可能会被拉黑和屏蔽，请各位牢记守则，谨慎发言。</span>
+                </p><span></span><span></span>
+                <p>&nbsp;</p><span></span><span></span>
+                <p><span style="color: rgb(95, 95, 95);">*由橙息更新于2022年1月28日</span></p><span></span><span></span>
+                <p><img class="richTextArea-img-block question-title-img"
+                        id="img-ac563c19-5a60-4bba-8819-27dee377afa1"
+                        src="https://static.wenjuan.pub/2698494269.png?imageView2/2/w/972/" style="letter-spacing: 0px;"></p>
+            </div>
+
+            <p style="text-align: left;font-size: 16px;font-weight: 500;color: #333;">
+                7. 您是否承诺遵守「频道守则」？
+                <span style="color: red;">*</span>
+            </p>
+            <div class="answer">
+                <div class="answer">
+                    <div class="radio-primary">
+                        <input id="A7-1" name="Q7" type="radio" value="是的，我承诺我会遵守「频道守则」">
+                        <label for="A7-1">是的，我承诺我会遵守「频道守则」</label>
+                    </div>
+                    <div class="radio-primary">
+                        <input id="A7-2" name="Q7" type="radio" value="不，我不愿意遵守「频道守则」">
+                        <label for="A7-2">不，我不愿意遵守「频道守则」</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-footer">
+            <button id="submit" style="height: 46px;width: 180px" class="btn btn-primary btn-lg" type="button">提交</button>
+        </div>
+
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        data.userId = $("#userId").val();
+        console.log(data.userId);
+        $("input[name='Q1']").change(function () {
+            if ($("input[name='Q1']:checked").attr("id") === "A1-2") {
+                $("#Q2").show();
+                $("#Q3").hide();
+                $("#Q4").hide();
+                $("#Q5").hide();
+                $("#Q6").hide();
+                $("#Q7").hide();
+                return;
+            }
+            $("#Q2").hide();
+            $("#Q3").show();
+            $("#Q4").show();
+            $("#Q5").show();
+            $("#Q6").show();
+            $("#Q7").show();
+
+        });
+    });
+
+    let webhookUrl = "http://superl.fun:6200/test_api/";
+
+    const form = {
+        "q1": "",
+        "q2": "",
+        "q3": "",
+        "q4": "",
+        "q5": "",
+        "q6": "",
+        "q7": ""
+    };
+
+    const data = {
+        userId:0,
+        survey: form
+    }
+
+    //提交
+    $("#submit").click(function () {
+        //如果A1-1和A1-2都没有选中
+        if ($("input[name='Q1']:checked").length === 0) {
+            alert("请选择");
+            return;
+        }
+
+        //如果A1-2选中
+        if ($("input[name='Q1']:checked").attr("id") === "A1-2") {
+            if ($("input[name='Q2']:checked").length === 0) {
+                alert("请选择");
+                return;
+            }
+            data.survey.q1 = $("input[name='Q1']:checked").val();
+            data.survey.q2 = $("input[name='Q2']:checked").val();
+
+            console.log(data);
+            $.ajax({
+                url: "/submitSurvey",
+                type: "POST",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                success: function (data1) {
+                    if (data1.code === 200) {
+                        alert("提交成功");
+                        $.get({
+                            url:webhookUrl,
+                            data:{
+                                "userid":data1.data.userId,
+                                "surveyid":data1.data.surveyId
+                            },
+
+                        })
+                        //location.reload()
+                    } else {
+                        alert(data.data);
+                    }
+                }
+            });
+            return;
+        }
+
+        //如果A1-1选中
+        if ($("input[name='Q1']:checked").attr("id") === "A1-1") {
+            if ($("input[name='Q3']:checked").length === 0) {
+                alert("请选择");
+                return;
+            }
+
+            //填空题非空验证
+            if ($("input[id='A4-1']").val() === "") {
+                alert("请填写");
+                return;
+            }
+            if ($("input[id='A5-1']").val() === "") {
+                alert("请填写");
+                return;
+            }
+            if ($("input[id='A6-1']").val() === "") {
+                alert("请填写");
+                return;
+            }
+
+
+            if ($("input[name='Q7']:checked").length === 0) {
+                alert("请选择");
+                return;
+            }
+            data.survey.q1 = $("input[name='Q1']:checked").val();
+            data.survey.q3 = $("input[name='Q3']:checked").val();
+            data.survey.q4 = $("input[id='A4-1']").val();
+            data.survey.q5 = $("input[id='A5-1']").val();
+            data.survey.q6 = $("input[id='A6-1']").val();
+            data.survey.q7 = $("input[name='Q7']:checked").val();
+
+            console.log(data);
+            $.ajax({
+                url: "/submitSurvey",
+                type: "POST",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                success: function (data1) {
+                    if (data1.code === 200) {
+                        alert("提交成功");
+                        $.get({
+                            url: webhookUrl,
+                            data:{
+                                "userid":data1.data.userId,
+                                "surveyid":data1.data.survey
+                            },
+
+                        })
+                        location.reload();
+                    } else {
+                        alert(data.data);
+                    }
+                }
+            });
+        }
+    })
+</script>
+<style>
+    body {
+        background: #f5f5f5;
+        height: 100%;
+        min-width: 316px;
+    }
+
+    @media screen and (min-width: 770px) {
+        .survey-container {
+            width: 760px;
+            margin: 50px auto 50px;
+            border: white 1px solid;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    }
+
+    @media screen and (max-width: 768px) and (min-width: 330px) {
+        .survey-container {
+            width: 100%;
+            margin: 20px auto 20px;
+            background-color: white;
+            padding: 20px;
+        }
+    }
+
+    .question {
+        margin-top: 20px;
+    }
+    .question-footer{
+        margin-top: 20px;
+        text-align: center;
+    }
+</style>
+</html>
