@@ -1,0 +1,17 @@
+{
+  "envId": "{{env.ENV_ID}}",
+  "version": "2.0",
+  "framework": {
+    "name": "java-warma",
+    "plugins": {
+      "container": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "serviceName": "java-warma",
+          "servicePath": "/java-warma",
+          "containerPort": 8080
+        }
+      }
+    }
+  }
+}上
